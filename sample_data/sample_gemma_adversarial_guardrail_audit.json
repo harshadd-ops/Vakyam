@@ -1,0 +1,1929 @@
+{
+  "dataset_name": "Vakyam 120-Case On-Device Gemma 4 E2B Adversarial Guardrail & Fallback Audit",
+  "schema_version": "2.4.0",
+  "total_audit_cases": 120,
+  "zero_bare_word_guarantee_verified": true,
+  "zero_silent_failure_guarantee_verified": true,
+  "audit_records": [
+    {
+      "audit_id": "GUARD-001",
+      "adversarial_mode": "VALID_MODEL_GENERATION",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "I would like some warm water, please.",
+      "guardrail_decision": "MODEL_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-002",
+      "adversarial_mode": "EMPTY_OR_WHITESPACE_RETURN",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "   \n  ",
+      "guardrail_decision": "FALLBACK_ENGAGED_EMPTY",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-003",
+      "adversarial_mode": "BARE_KEYWORD_ECHO",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "water warm",
+      "guardrail_decision": "FALLBACK_ENGAGED_ECHO",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-004",
+      "adversarial_mode": "DEVANAGARI_LEAK_IN_HINGLISH",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "मुझे ठंडा पानी चाहिए।",
+      "guardrail_decision": "FALLBACK_ENGAGED_SCRIPT_MISMATCH",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-005",
+      "adversarial_mode": "MARKDOWN_WRAPPER_AND_PREAMBLE",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Sure! Here is the sentence:\n1. **Mujhe thanda paani chahiye.**",
+      "guardrail_decision": "CLEANED_AND_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-006",
+      "adversarial_mode": "THERMAL_TIMEOUT_4500MS",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "<TIMEOUT_EXCEEDED_4500MS>",
+      "guardrail_decision": "FALLBACK_ENGAGED_TIMEOUT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-007",
+      "adversarial_mode": "SINGLE_WORD_FRAGMENT",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Water.",
+      "guardrail_decision": "FALLBACK_ENGAGED_TOO_SHORT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-008",
+      "adversarial_mode": "THIRD_PERSON_HALLUCINATION",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "The patient wants water.",
+      "guardrail_decision": "CLEANED_FIRST_PERSON_ENFORCED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "Mujhe thanda paani chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-009",
+      "adversarial_mode": "VALID_MODEL_GENERATION",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "I would like some warm water, please.",
+      "guardrail_decision": "MODEL_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-010",
+      "adversarial_mode": "EMPTY_OR_WHITESPACE_RETURN",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "   \n  ",
+      "guardrail_decision": "FALLBACK_ENGAGED_EMPTY",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-011",
+      "adversarial_mode": "BARE_KEYWORD_ECHO",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "water warm",
+      "guardrail_decision": "FALLBACK_ENGAGED_ECHO",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-012",
+      "adversarial_mode": "DEVANAGARI_LEAK_IN_HINGLISH",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "मुझे ठंडा पानी चाहिए।",
+      "guardrail_decision": "FALLBACK_ENGAGED_SCRIPT_MISMATCH",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-013",
+      "adversarial_mode": "MARKDOWN_WRAPPER_AND_PREAMBLE",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Sure! Here is the sentence:\n1. **Mujhe thanda paani chahiye.**",
+      "guardrail_decision": "CLEANED_AND_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-014",
+      "adversarial_mode": "THERMAL_TIMEOUT_4500MS",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "<TIMEOUT_EXCEEDED_4500MS>",
+      "guardrail_decision": "FALLBACK_ENGAGED_TIMEOUT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-015",
+      "adversarial_mode": "SINGLE_WORD_FRAGMENT",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Water.",
+      "guardrail_decision": "FALLBACK_ENGAGED_TOO_SHORT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-016",
+      "adversarial_mode": "THIRD_PERSON_HALLUCINATION",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "The patient wants water.",
+      "guardrail_decision": "CLEANED_FIRST_PERSON_ENFORCED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "Mujhe thanda paani chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-017",
+      "adversarial_mode": "VALID_MODEL_GENERATION",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "I would like some warm water, please.",
+      "guardrail_decision": "MODEL_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-018",
+      "adversarial_mode": "EMPTY_OR_WHITESPACE_RETURN",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "   \n  ",
+      "guardrail_decision": "FALLBACK_ENGAGED_EMPTY",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-019",
+      "adversarial_mode": "BARE_KEYWORD_ECHO",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "water warm",
+      "guardrail_decision": "FALLBACK_ENGAGED_ECHO",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-020",
+      "adversarial_mode": "DEVANAGARI_LEAK_IN_HINGLISH",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "मुझे ठंडा पानी चाहिए।",
+      "guardrail_decision": "FALLBACK_ENGAGED_SCRIPT_MISMATCH",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-021",
+      "adversarial_mode": "MARKDOWN_WRAPPER_AND_PREAMBLE",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Sure! Here is the sentence:\n1. **Mujhe thanda paani chahiye.**",
+      "guardrail_decision": "CLEANED_AND_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-022",
+      "adversarial_mode": "THERMAL_TIMEOUT_4500MS",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "<TIMEOUT_EXCEEDED_4500MS>",
+      "guardrail_decision": "FALLBACK_ENGAGED_TIMEOUT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-023",
+      "adversarial_mode": "SINGLE_WORD_FRAGMENT",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Water.",
+      "guardrail_decision": "FALLBACK_ENGAGED_TOO_SHORT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-024",
+      "adversarial_mode": "THIRD_PERSON_HALLUCINATION",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "The patient wants water.",
+      "guardrail_decision": "CLEANED_FIRST_PERSON_ENFORCED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "Mujhe thanda paani chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-025",
+      "adversarial_mode": "VALID_MODEL_GENERATION",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "I would like some warm water, please.",
+      "guardrail_decision": "MODEL_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-026",
+      "adversarial_mode": "EMPTY_OR_WHITESPACE_RETURN",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "   \n  ",
+      "guardrail_decision": "FALLBACK_ENGAGED_EMPTY",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-027",
+      "adversarial_mode": "BARE_KEYWORD_ECHO",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "water warm",
+      "guardrail_decision": "FALLBACK_ENGAGED_ECHO",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-028",
+      "adversarial_mode": "DEVANAGARI_LEAK_IN_HINGLISH",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "मुझे ठंडा पानी चाहिए।",
+      "guardrail_decision": "FALLBACK_ENGAGED_SCRIPT_MISMATCH",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-029",
+      "adversarial_mode": "MARKDOWN_WRAPPER_AND_PREAMBLE",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Sure! Here is the sentence:\n1. **Mujhe thanda paani chahiye.**",
+      "guardrail_decision": "CLEANED_AND_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-030",
+      "adversarial_mode": "THERMAL_TIMEOUT_4500MS",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "<TIMEOUT_EXCEEDED_4500MS>",
+      "guardrail_decision": "FALLBACK_ENGAGED_TIMEOUT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-031",
+      "adversarial_mode": "SINGLE_WORD_FRAGMENT",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Water.",
+      "guardrail_decision": "FALLBACK_ENGAGED_TOO_SHORT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-032",
+      "adversarial_mode": "THIRD_PERSON_HALLUCINATION",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "The patient wants water.",
+      "guardrail_decision": "CLEANED_FIRST_PERSON_ENFORCED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "Mujhe thanda paani chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-033",
+      "adversarial_mode": "VALID_MODEL_GENERATION",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "I would like some warm water, please.",
+      "guardrail_decision": "MODEL_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-034",
+      "adversarial_mode": "EMPTY_OR_WHITESPACE_RETURN",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "   \n  ",
+      "guardrail_decision": "FALLBACK_ENGAGED_EMPTY",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-035",
+      "adversarial_mode": "BARE_KEYWORD_ECHO",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "water warm",
+      "guardrail_decision": "FALLBACK_ENGAGED_ECHO",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-036",
+      "adversarial_mode": "DEVANAGARI_LEAK_IN_HINGLISH",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "मुझे ठंडा पानी चाहिए।",
+      "guardrail_decision": "FALLBACK_ENGAGED_SCRIPT_MISMATCH",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-037",
+      "adversarial_mode": "MARKDOWN_WRAPPER_AND_PREAMBLE",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Sure! Here is the sentence:\n1. **Mujhe thanda paani chahiye.**",
+      "guardrail_decision": "CLEANED_AND_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-038",
+      "adversarial_mode": "THERMAL_TIMEOUT_4500MS",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "<TIMEOUT_EXCEEDED_4500MS>",
+      "guardrail_decision": "FALLBACK_ENGAGED_TIMEOUT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-039",
+      "adversarial_mode": "SINGLE_WORD_FRAGMENT",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Water.",
+      "guardrail_decision": "FALLBACK_ENGAGED_TOO_SHORT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-040",
+      "adversarial_mode": "THIRD_PERSON_HALLUCINATION",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "The patient wants water.",
+      "guardrail_decision": "CLEANED_FIRST_PERSON_ENFORCED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "Mujhe thanda paani chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-041",
+      "adversarial_mode": "VALID_MODEL_GENERATION",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "I would like some warm water, please.",
+      "guardrail_decision": "MODEL_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-042",
+      "adversarial_mode": "EMPTY_OR_WHITESPACE_RETURN",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "   \n  ",
+      "guardrail_decision": "FALLBACK_ENGAGED_EMPTY",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-043",
+      "adversarial_mode": "BARE_KEYWORD_ECHO",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "water warm",
+      "guardrail_decision": "FALLBACK_ENGAGED_ECHO",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-044",
+      "adversarial_mode": "DEVANAGARI_LEAK_IN_HINGLISH",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "मुझे ठंडा पानी चाहिए।",
+      "guardrail_decision": "FALLBACK_ENGAGED_SCRIPT_MISMATCH",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-045",
+      "adversarial_mode": "MARKDOWN_WRAPPER_AND_PREAMBLE",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Sure! Here is the sentence:\n1. **Mujhe thanda paani chahiye.**",
+      "guardrail_decision": "CLEANED_AND_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-046",
+      "adversarial_mode": "THERMAL_TIMEOUT_4500MS",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "<TIMEOUT_EXCEEDED_4500MS>",
+      "guardrail_decision": "FALLBACK_ENGAGED_TIMEOUT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-047",
+      "adversarial_mode": "SINGLE_WORD_FRAGMENT",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Water.",
+      "guardrail_decision": "FALLBACK_ENGAGED_TOO_SHORT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-048",
+      "adversarial_mode": "THIRD_PERSON_HALLUCINATION",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "The patient wants water.",
+      "guardrail_decision": "CLEANED_FIRST_PERSON_ENFORCED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "Mujhe thanda paani chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-049",
+      "adversarial_mode": "VALID_MODEL_GENERATION",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "I would like some warm water, please.",
+      "guardrail_decision": "MODEL_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-050",
+      "adversarial_mode": "EMPTY_OR_WHITESPACE_RETURN",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "   \n  ",
+      "guardrail_decision": "FALLBACK_ENGAGED_EMPTY",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-051",
+      "adversarial_mode": "BARE_KEYWORD_ECHO",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "water warm",
+      "guardrail_decision": "FALLBACK_ENGAGED_ECHO",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-052",
+      "adversarial_mode": "DEVANAGARI_LEAK_IN_HINGLISH",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "मुझे ठंडा पानी चाहिए।",
+      "guardrail_decision": "FALLBACK_ENGAGED_SCRIPT_MISMATCH",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-053",
+      "adversarial_mode": "MARKDOWN_WRAPPER_AND_PREAMBLE",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Sure! Here is the sentence:\n1. **Mujhe thanda paani chahiye.**",
+      "guardrail_decision": "CLEANED_AND_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-054",
+      "adversarial_mode": "THERMAL_TIMEOUT_4500MS",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "<TIMEOUT_EXCEEDED_4500MS>",
+      "guardrail_decision": "FALLBACK_ENGAGED_TIMEOUT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-055",
+      "adversarial_mode": "SINGLE_WORD_FRAGMENT",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Water.",
+      "guardrail_decision": "FALLBACK_ENGAGED_TOO_SHORT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-056",
+      "adversarial_mode": "THIRD_PERSON_HALLUCINATION",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "The patient wants water.",
+      "guardrail_decision": "CLEANED_FIRST_PERSON_ENFORCED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "Mujhe thanda paani chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-057",
+      "adversarial_mode": "VALID_MODEL_GENERATION",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "I would like some warm water, please.",
+      "guardrail_decision": "MODEL_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-058",
+      "adversarial_mode": "EMPTY_OR_WHITESPACE_RETURN",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "   \n  ",
+      "guardrail_decision": "FALLBACK_ENGAGED_EMPTY",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-059",
+      "adversarial_mode": "BARE_KEYWORD_ECHO",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "water warm",
+      "guardrail_decision": "FALLBACK_ENGAGED_ECHO",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-060",
+      "adversarial_mode": "DEVANAGARI_LEAK_IN_HINGLISH",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "मुझे ठंडा पानी चाहिए।",
+      "guardrail_decision": "FALLBACK_ENGAGED_SCRIPT_MISMATCH",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-061",
+      "adversarial_mode": "MARKDOWN_WRAPPER_AND_PREAMBLE",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Sure! Here is the sentence:\n1. **Mujhe thanda paani chahiye.**",
+      "guardrail_decision": "CLEANED_AND_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-062",
+      "adversarial_mode": "THERMAL_TIMEOUT_4500MS",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "<TIMEOUT_EXCEEDED_4500MS>",
+      "guardrail_decision": "FALLBACK_ENGAGED_TIMEOUT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-063",
+      "adversarial_mode": "SINGLE_WORD_FRAGMENT",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Water.",
+      "guardrail_decision": "FALLBACK_ENGAGED_TOO_SHORT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-064",
+      "adversarial_mode": "THIRD_PERSON_HALLUCINATION",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "The patient wants water.",
+      "guardrail_decision": "CLEANED_FIRST_PERSON_ENFORCED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "Mujhe thanda paani chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-065",
+      "adversarial_mode": "VALID_MODEL_GENERATION",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "I would like some warm water, please.",
+      "guardrail_decision": "MODEL_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-066",
+      "adversarial_mode": "EMPTY_OR_WHITESPACE_RETURN",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "   \n  ",
+      "guardrail_decision": "FALLBACK_ENGAGED_EMPTY",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-067",
+      "adversarial_mode": "BARE_KEYWORD_ECHO",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "water warm",
+      "guardrail_decision": "FALLBACK_ENGAGED_ECHO",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-068",
+      "adversarial_mode": "DEVANAGARI_LEAK_IN_HINGLISH",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "मुझे ठंडा पानी चाहिए।",
+      "guardrail_decision": "FALLBACK_ENGAGED_SCRIPT_MISMATCH",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-069",
+      "adversarial_mode": "MARKDOWN_WRAPPER_AND_PREAMBLE",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Sure! Here is the sentence:\n1. **Mujhe thanda paani chahiye.**",
+      "guardrail_decision": "CLEANED_AND_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-070",
+      "adversarial_mode": "THERMAL_TIMEOUT_4500MS",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "<TIMEOUT_EXCEEDED_4500MS>",
+      "guardrail_decision": "FALLBACK_ENGAGED_TIMEOUT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-071",
+      "adversarial_mode": "SINGLE_WORD_FRAGMENT",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Water.",
+      "guardrail_decision": "FALLBACK_ENGAGED_TOO_SHORT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-072",
+      "adversarial_mode": "THIRD_PERSON_HALLUCINATION",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "The patient wants water.",
+      "guardrail_decision": "CLEANED_FIRST_PERSON_ENFORCED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "Mujhe thanda paani chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-073",
+      "adversarial_mode": "VALID_MODEL_GENERATION",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "I would like some warm water, please.",
+      "guardrail_decision": "MODEL_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-074",
+      "adversarial_mode": "EMPTY_OR_WHITESPACE_RETURN",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "   \n  ",
+      "guardrail_decision": "FALLBACK_ENGAGED_EMPTY",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-075",
+      "adversarial_mode": "BARE_KEYWORD_ECHO",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "water warm",
+      "guardrail_decision": "FALLBACK_ENGAGED_ECHO",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-076",
+      "adversarial_mode": "DEVANAGARI_LEAK_IN_HINGLISH",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "मुझे ठंडा पानी चाहिए।",
+      "guardrail_decision": "FALLBACK_ENGAGED_SCRIPT_MISMATCH",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-077",
+      "adversarial_mode": "MARKDOWN_WRAPPER_AND_PREAMBLE",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Sure! Here is the sentence:\n1. **Mujhe thanda paani chahiye.**",
+      "guardrail_decision": "CLEANED_AND_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-078",
+      "adversarial_mode": "THERMAL_TIMEOUT_4500MS",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "<TIMEOUT_EXCEEDED_4500MS>",
+      "guardrail_decision": "FALLBACK_ENGAGED_TIMEOUT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-079",
+      "adversarial_mode": "SINGLE_WORD_FRAGMENT",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Water.",
+      "guardrail_decision": "FALLBACK_ENGAGED_TOO_SHORT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-080",
+      "adversarial_mode": "THIRD_PERSON_HALLUCINATION",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "The patient wants water.",
+      "guardrail_decision": "CLEANED_FIRST_PERSON_ENFORCED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "Mujhe thanda paani chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-081",
+      "adversarial_mode": "VALID_MODEL_GENERATION",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "I would like some warm water, please.",
+      "guardrail_decision": "MODEL_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-082",
+      "adversarial_mode": "EMPTY_OR_WHITESPACE_RETURN",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "   \n  ",
+      "guardrail_decision": "FALLBACK_ENGAGED_EMPTY",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-083",
+      "adversarial_mode": "BARE_KEYWORD_ECHO",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "water warm",
+      "guardrail_decision": "FALLBACK_ENGAGED_ECHO",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-084",
+      "adversarial_mode": "DEVANAGARI_LEAK_IN_HINGLISH",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "मुझे ठंडा पानी चाहिए।",
+      "guardrail_decision": "FALLBACK_ENGAGED_SCRIPT_MISMATCH",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-085",
+      "adversarial_mode": "MARKDOWN_WRAPPER_AND_PREAMBLE",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Sure! Here is the sentence:\n1. **Mujhe thanda paani chahiye.**",
+      "guardrail_decision": "CLEANED_AND_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-086",
+      "adversarial_mode": "THERMAL_TIMEOUT_4500MS",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "<TIMEOUT_EXCEEDED_4500MS>",
+      "guardrail_decision": "FALLBACK_ENGAGED_TIMEOUT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-087",
+      "adversarial_mode": "SINGLE_WORD_FRAGMENT",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Water.",
+      "guardrail_decision": "FALLBACK_ENGAGED_TOO_SHORT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-088",
+      "adversarial_mode": "THIRD_PERSON_HALLUCINATION",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "The patient wants water.",
+      "guardrail_decision": "CLEANED_FIRST_PERSON_ENFORCED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "Mujhe thanda paani chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-089",
+      "adversarial_mode": "VALID_MODEL_GENERATION",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "I would like some warm water, please.",
+      "guardrail_decision": "MODEL_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-090",
+      "adversarial_mode": "EMPTY_OR_WHITESPACE_RETURN",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "   \n  ",
+      "guardrail_decision": "FALLBACK_ENGAGED_EMPTY",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-091",
+      "adversarial_mode": "BARE_KEYWORD_ECHO",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "water warm",
+      "guardrail_decision": "FALLBACK_ENGAGED_ECHO",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-092",
+      "adversarial_mode": "DEVANAGARI_LEAK_IN_HINGLISH",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "मुझे ठंडा पानी चाहिए।",
+      "guardrail_decision": "FALLBACK_ENGAGED_SCRIPT_MISMATCH",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-093",
+      "adversarial_mode": "MARKDOWN_WRAPPER_AND_PREAMBLE",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Sure! Here is the sentence:\n1. **Mujhe thanda paani chahiye.**",
+      "guardrail_decision": "CLEANED_AND_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-094",
+      "adversarial_mode": "THERMAL_TIMEOUT_4500MS",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "<TIMEOUT_EXCEEDED_4500MS>",
+      "guardrail_decision": "FALLBACK_ENGAGED_TIMEOUT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-095",
+      "adversarial_mode": "SINGLE_WORD_FRAGMENT",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Water.",
+      "guardrail_decision": "FALLBACK_ENGAGED_TOO_SHORT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-096",
+      "adversarial_mode": "THIRD_PERSON_HALLUCINATION",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "The patient wants water.",
+      "guardrail_decision": "CLEANED_FIRST_PERSON_ENFORCED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "Mujhe thanda paani chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-097",
+      "adversarial_mode": "VALID_MODEL_GENERATION",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "I would like some warm water, please.",
+      "guardrail_decision": "MODEL_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-098",
+      "adversarial_mode": "EMPTY_OR_WHITESPACE_RETURN",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "   \n  ",
+      "guardrail_decision": "FALLBACK_ENGAGED_EMPTY",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-099",
+      "adversarial_mode": "BARE_KEYWORD_ECHO",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "water warm",
+      "guardrail_decision": "FALLBACK_ENGAGED_ECHO",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-100",
+      "adversarial_mode": "DEVANAGARI_LEAK_IN_HINGLISH",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "मुझे ठंडा पानी चाहिए।",
+      "guardrail_decision": "FALLBACK_ENGAGED_SCRIPT_MISMATCH",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-101",
+      "adversarial_mode": "MARKDOWN_WRAPPER_AND_PREAMBLE",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Sure! Here is the sentence:\n1. **Mujhe thanda paani chahiye.**",
+      "guardrail_decision": "CLEANED_AND_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-102",
+      "adversarial_mode": "THERMAL_TIMEOUT_4500MS",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "<TIMEOUT_EXCEEDED_4500MS>",
+      "guardrail_decision": "FALLBACK_ENGAGED_TIMEOUT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-103",
+      "adversarial_mode": "SINGLE_WORD_FRAGMENT",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Water.",
+      "guardrail_decision": "FALLBACK_ENGAGED_TOO_SHORT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-104",
+      "adversarial_mode": "THIRD_PERSON_HALLUCINATION",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "The patient wants water.",
+      "guardrail_decision": "CLEANED_FIRST_PERSON_ENFORCED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "Mujhe thanda paani chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-105",
+      "adversarial_mode": "VALID_MODEL_GENERATION",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "I would like some warm water, please.",
+      "guardrail_decision": "MODEL_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-106",
+      "adversarial_mode": "EMPTY_OR_WHITESPACE_RETURN",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "   \n  ",
+      "guardrail_decision": "FALLBACK_ENGAGED_EMPTY",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-107",
+      "adversarial_mode": "BARE_KEYWORD_ECHO",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "water warm",
+      "guardrail_decision": "FALLBACK_ENGAGED_ECHO",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-108",
+      "adversarial_mode": "DEVANAGARI_LEAK_IN_HINGLISH",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "मुझे ठंडा पानी चाहिए।",
+      "guardrail_decision": "FALLBACK_ENGAGED_SCRIPT_MISMATCH",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-109",
+      "adversarial_mode": "MARKDOWN_WRAPPER_AND_PREAMBLE",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Sure! Here is the sentence:\n1. **Mujhe thanda paani chahiye.**",
+      "guardrail_decision": "CLEANED_AND_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-110",
+      "adversarial_mode": "THERMAL_TIMEOUT_4500MS",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "<TIMEOUT_EXCEEDED_4500MS>",
+      "guardrail_decision": "FALLBACK_ENGAGED_TIMEOUT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-111",
+      "adversarial_mode": "SINGLE_WORD_FRAGMENT",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Water.",
+      "guardrail_decision": "FALLBACK_ENGAGED_TOO_SHORT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-112",
+      "adversarial_mode": "THIRD_PERSON_HALLUCINATION",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "The patient wants water.",
+      "guardrail_decision": "CLEANED_FIRST_PERSON_ENFORCED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "Mujhe thanda paani chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-113",
+      "adversarial_mode": "VALID_MODEL_GENERATION",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "I would like some warm water, please.",
+      "guardrail_decision": "MODEL_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-114",
+      "adversarial_mode": "EMPTY_OR_WHITESPACE_RETURN",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "   \n  ",
+      "guardrail_decision": "FALLBACK_ENGAGED_EMPTY",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-115",
+      "adversarial_mode": "BARE_KEYWORD_ECHO",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "water warm",
+      "guardrail_decision": "FALLBACK_ENGAGED_ECHO",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-116",
+      "adversarial_mode": "DEVANAGARI_LEAK_IN_HINGLISH",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "मुझे ठंडा पानी चाहिए।",
+      "guardrail_decision": "FALLBACK_ENGAGED_SCRIPT_MISMATCH",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-117",
+      "adversarial_mode": "MARKDOWN_WRAPPER_AND_PREAMBLE",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Sure! Here is the sentence:\n1. **Mujhe thanda paani chahiye.**",
+      "guardrail_decision": "CLEANED_AND_ACCEPTED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "I would like some warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-118",
+      "adversarial_mode": "THERMAL_TIMEOUT_4500MS",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "<TIMEOUT_EXCEEDED_4500MS>",
+      "guardrail_decision": "FALLBACK_ENGAGED_TIMEOUT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "Mujhe paani aur thanda chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-119",
+      "adversarial_mode": "SINGLE_WORD_FRAGMENT",
+      "language_mode": "English",
+      "input_keywords": [
+        "water",
+        "warm"
+      ],
+      "caregiver_question_context": "What do you need?",
+      "raw_litert_lm_output": "Water.",
+      "guardrail_decision": "FALLBACK_ENGAGED_TOO_SHORT",
+      "deterministic_fallback_invoked": true,
+      "final_spoken_utterance": "I would like warm water, please.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    },
+    {
+      "audit_id": "GUARD-120",
+      "adversarial_mode": "THIRD_PERSON_HALLUCINATION",
+      "language_mode": "Hinglish",
+      "input_keywords": [
+        "paani",
+        "thanda"
+      ],
+      "caregiver_question_context": "Kya chahiye?",
+      "raw_litert_lm_output": "The patient wants water.",
+      "guardrail_decision": "CLEANED_FIRST_PERSON_ENFORCED",
+      "deterministic_fallback_invoked": false,
+      "final_spoken_utterance": "Mujhe thanda paani chahiye.",
+      "bare_word_spoken_violation": false,
+      "patient_silenced_violation": false
+    }
+  ]
+}

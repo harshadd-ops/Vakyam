@@ -13,7 +13,7 @@ class ThermalPolicyTest {
     @Test
     fun coolDeviceStaysFull() {
         val p = ThermalPolicy()
-        assertEquals(FULL, p.evaluate(LIGHT, 0.83f, 37f, 0L)) // values measured on the iQOO 13
+        assertEquals(FULL, p.evaluate(LIGHT, 0.83f, 37f, 0L)) // values measured on physical device
     }
 
     @Test

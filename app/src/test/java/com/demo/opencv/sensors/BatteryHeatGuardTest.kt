@@ -11,7 +11,7 @@ class BatteryHeatGuardTest {
     @Test
     fun normalChargingTemperaturesAreSilent() {
         val g = BatteryHeatGuard()
-        assertEquals(NORMAL, g.update(37.0f, true)) // measured on the iQOO 13 while charging
+        assertEquals(NORMAL, g.update(37.0f, true)) // measured on physical device while charging
         assertEquals(NORMAL, g.update(41.9f, true))
     }
 

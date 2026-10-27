@@ -67,7 +67,7 @@ class WarmTintPolicyTest {
     }
 
     @Test
-    fun parsesIqooLightCctEvent() {
+    fun parsesHardwareLightCctEvent() {
         val event = floatArrayOf(0.03f, 11.49f, 3.29f, 2.10f, 0.99f, 1.06f, 3204f, 0f, 0f, 0f, 0f, 1f, 0f, 0f, 0f, 0f)
         assertEquals(3204f, CctReading.kelvinFrom(event)!!, 0.01f)
         assertNull(CctReading.kelvinFrom(FloatArray(16))) // zeros = no reading

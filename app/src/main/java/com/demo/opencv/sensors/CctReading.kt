@@ -6,7 +6,7 @@ import android.hardware.SensorManager
 object CctReading {
     const val STRING_TYPE = "android.sensor.light_cct"
     const val VIVO_LIGHT_CCT_TYPE = 66557
-    const val KELVIN_INDEX = 6 // stk_stk6b9x on iQOO 13
+    const val KELVIN_INDEX = 6 // stk_stk6b9x hardware RGB/CCT sensor
     const val MIN_K = 1000f
     const val MAX_K = 15000f
 
